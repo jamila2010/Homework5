@@ -1,0 +1,199 @@
+{
+  "products": [
+    {
+      "id": 13897,
+      "name": "Bioaqua Aloe Vera Gel",
+      "brand": "Bioaqua",
+      "category": "Skincare",
+      "price": 6.5,
+      "currency": "USD",
+      "rating": 4.8,
+      "inStock": true,
+      "description": "Soothing and moisturizing aloe vera gel suitable for all skin types.",
+      "image": "https://www.banafa.uz/upload/dev2fun.imagecompress/webp/resize_cache/iblock/ba9/800_800_1/d2y1rxu5uo0rjhgqegn98iw5uw28jvu3.webp"
+    },
+    {
+      "id": 2398,
+      "name": "Cellio SPF50+ Daily Sun Cream",
+      "brand": "Cellio",
+      "category": "Sunscreen",
+      "price": 9.9,
+      "currency": "USD",
+      "rating": 4.6,
+      "inStock": true,
+      "description": "Lightweight sun cream that protects skin from harmful UV rays.",
+      "image": "https://cdn.flymart.uz/file/hub/file/2024/3/25/2e9DxR0l3IIlOdTGE2jqAfR7z55.jpg"
+    },
+    {
+      "id": 398347,
+      "name": "Bioaqua Collagen Essence",
+      "brand": "Bioaqua",
+      "category": "Serum",
+      "price": 8.0,
+      "currency": "USD",
+      "rating": 4.7,
+      "inStock": false,
+      "description": "Nourishing essence with collagen for improved skin elasticity.",
+      "image": "https://m.media-amazon.com/images/I/61JNHgepukL._UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 49347,
+      "name": "Face Tonic",
+      "brand": "Bioaqua",
+      "category": "Toner",
+      "price": 5.2,
+      "currency": "USD",
+      "rating": 4.4,
+      "inStock": true,
+      "description": "Refreshing toner that balances skin pH and preps it for serum.",
+      "image": "https://cdn.bloombeauty.uz/products/76e23609ae6579669999fd5ae78330ed.jpeg"
+    },
+    {
+      "id": 1,
+      "name": "Bioaqua Aloe Vera Gel",
+      "brand": "Bioaqua",
+      "category": "Skincare",
+      "price": 6.5,
+      "currency": "USD",
+      "rating": 4.8,
+      "stock": 42,
+      "description": "Soothing and moisturizing aloe vera gel that hydrates and calms irritated skin.",
+      "image": "https://olcha.uz/image/700x700/products/cdn_1/supplier/stores/1/2024-03-03/wNxJBxuMIZ11o8Q2g41LwIH9tGzWGT3EAwplTLDy9EEYwkna2aZnsACygtSC.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Cellio SPF50+ Daily Sun Cream",
+      "brand": "Cellio",
+      "category": "Sunscreen",
+      "price": 9.9,
+      "currency": "USD",
+      "rating": 4.6,
+      "stock": 61,
+      "description": "Lightweight UV protection cream that leaves no white cast and absorbs quickly.",
+      "image": "https://images.uzum.uz/cr4ra9lbnta1ogm710p0/original.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Bioaqua Collagen Essence",
+      "brand": "Bioaqua",
+      "category": "Serum",
+      "price": 8.0,
+      "currency": "USD",
+      "rating": 4.7,
+      "stock": 0,
+      "description": "Collagen essence that enhances skin elasticity and restores youthful glow.",
+      "image": "https://ir.ozone.ru/s3/multimedia-1-f/c400/7291580631.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Bioaqua Face Toner",
+      "brand": "Bioaqua",
+      "category": "Toner",
+      "price": 5.2,
+      "currency": "USD",
+      "rating": 4.4,
+      "stock": 74,
+      "description": "Gentle toner that balances pH levels and refreshes skin before serum application.",
+      "image": "https://www.celiginglobal.com/assets/images/blogs/1735984003celiginbannerpng.png"
+    },
+    {
+      "id": 5,
+      "name": "Innisfree Green Tea Foam Cleanser",
+      "brand": "Innisfree",
+      "category": "Cleanser",
+      "price": 7.9,
+      "currency": "USD",
+      "rating": 4.5,
+      "stock": 32,
+      "description": "Cleansing foam enriched with green tea extracts for deep yet gentle cleansing.",
+      "image": "https://olcha.uz/image/700x700/products/2022-11-22/penka-dlya-umyvaniya-s-ekstraktom-zelenogo-chaya-innisfree-green-tea-foam-cleanser-150ml-170868-0.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "COSRX Snail Mucin Power Essence",
+      "brand": "COSRX",
+      "category": "Serum",
+      "price": 16.0,
+      "currency": "USD",
+      "rating": 4.9,
+      "stock": 28,
+      "description": "Hydrating essence formulated with snail mucin to repair and rejuvenate skin.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsVpSmfzhPYVPcwqh4aZwwjvyyUsTFwTw2_8wGpUhDS6bD9rUPcd4MJHyWmVVJVOxZgpc&usqp=CAU"
+    },
+    {
+      "id": 7,
+      "name": "Etude House Moistfull Collagen Cream",
+      "brand": "Etude House",
+      "category": "Cream",
+      "price": 12.5,
+      "currency": "USD",
+      "rating": 4.6,
+      "stock": 53,
+      "description": "Lightweight moisturizer that improves firmness and leaves a dewy finish.",
+      "image": "https://cdn.shopify.com/s/files/1/0806/6102/1007/files/missha-m-perfect-cover-bb-cream-spf42-pa-6-colors-127059.webp"
+    },
+    {
+      "id": 8,
+      "name": "Laneige Water Sleeping Mask",
+      "brand": "Laneige",
+      "category": "Mask",
+      "price": 18.0,
+      "currency": "USD",
+      "rating": 4.9,
+      "stock": 37,
+      "description": "Overnight mask that hydrates and revitalizes skin while you sleep.",
+      "image": "https://cdn-irec.r-99.com/sites/default/files/imagecache/300o/product-images/457031/FWizMEXp1mMG81SUI0toUw.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "The Ordinary Niacinamide 10% + Zinc 1%",
+      "brand": "The Ordinary",
+      "category": "Serum",
+      "price": 11.5,
+      "currency": "USD",
+      "rating": 4.8,
+      "stock": 65,
+      "description": "Brightening serum that reduces blemishes and regulates sebum production.",
+      "image": "https://www.byrdie.com/thmb/KRih-5LgieEhLXlfqE_4DLyYiqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/korean-beauty-face-masks-tout-500a85c40cea4e728478a0fa1e259fd0.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Some By Mi AHA BHA PHA Miracle Toner",
+      "brand": "Some By Mi",
+      "category": "Toner",
+      "price": 13.5,
+      "currency": "USD",
+      "rating": 4.7,
+      "stock": 40,
+      "description": "Exfoliating toner that helps clear acne and smoothen uneven skin texture.",
+      "image": "https://m.media-amazon.com/images/I/81OuZsxdt3L._UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Missha Time Revolution Night Repair Ampoule",
+      "brand": "Missha",
+      "category": "Serum",
+      "price": 19.9,
+      "currency": "USD",
+      "rating": 4.8,
+      "stock": 29,
+      "description": "Advanced night repair formula for firmer, more radiant skin overnight.",
+      "image": "https://static.thcdn.com/productimg/original/15228015-1255270723352789.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Banila Co Clean It Zero Cleansing Balm",
+      "brand": "Banila Co",
+      "category": "Cleanser",
+      "price": 17.5,
+      "currency": "USD",
+      "rating": 4.9,
+      "stock": 38,
+      "description": "Iconic balm cleanser that melts makeup and impurities effortlessly.",
+      "image": "https://cdn.shopify.com/s/files/1/0582/2885/files/SHADES_4_UPDATE.png?auto=format&v=1752263046"
+    }
+
+
+    
+  ]
+}
