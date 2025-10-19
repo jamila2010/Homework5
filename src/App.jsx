@@ -1,41 +1,34 @@
 import React from 'react'
-import {useState, useCallback, useEffect} from "react"
-import "./App.css"
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Product from './components/Products'
+import MainLayout from './layout/MainLayout'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
 
 export default function App() {
-  const [products, setProducts] = useState (null)
-  const [api,setApi] = useState("http://localhost:3000/products")
-
-  const getData=useCallback(async ()=>{
-    const res= await fetch (api)
-    const data= await res.json()
-    setProducts(data)
-    console.log(data)
-  })
-  useEffect(()=>{
-   getData()
-  }, [api])
+ const routs=createBrowserRouter([{
+  path:"/",
+  element:<MainLayout />,
+  children:[
+    {
+      index:true,
+      element:<Home />,
+    },
+    {
+      path:"about",
+      element:<About />,
+    },
+    {
+      path:"product",
+      element: <Product />
+    },{
+      path:"contact",
+      element: <Contact />
+    }
+  ]
+ }])
   return (
-    <div className='main' >
-      <div className='cards'>
-        {products &&
-        products.map((product) =>{
-          return (
-            <div className='card' key={product.id}>
-              <img src={product.image} alt="product photo" />
-              <h1>
-                {" "}
-                {product.name}
-              </h1>
-              <h1>price:{product.price} $ </h1>
-              <p>rating:{product.rating} ⭐️
-              </p>
-              <p>Brand {product.brand}</p>
-              <p>category : {product.category} </p>
-            </div>
-          )
-        })}
-      </div>
-    </div>
+   <RouterProvider router={routs} />
   )
 }

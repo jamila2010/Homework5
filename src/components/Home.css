@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.home{
+    width: 100%;
+    padding: 10px 30px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
