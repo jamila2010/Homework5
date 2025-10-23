@@ -1,17 +1,20 @@
-import React from 'react'
 import {UseHook} from '../hooks/UseHook'
-import {useState} from 'react'
+import {useState,} from 'react'
+import{ useNavigate} from 'react-router-dom'
 
 function Products() {
-  const [api, setApi] =useState('http://localhost:3000/products')  
+  const [api, setApi] =useState('https://dummyjson.com/products')  
   const {data, error, pending}=UseHook(api)
-
+  const navigate =useNavigate()
+ const handleInfo=(id)=>{
+navigate(`/product/${id}`)
+ }
 
   return (
     <div className='flex flex-wrap gap-[50px] justify-center items-center mt-[50px]  '>
       {error && <h2>Not Found</h2> }
       {pending &&<h2>Loading...</h2> }
-      {data&& data.map((product)=>{
+      {data&& data.products.map((product)=>{
         return (
       <div className='flex flex-wrap'>
           <a href="#" className="group relative overflow-hidden shadow-2xs rounded-[8px] border border-gray-100 ">
@@ -37,26 +40,35 @@ function Products() {
   </button>
 
   <img
-    src={product.image}
+    src={product.thumbnail}
     alt=""
     className="h-[350px] w-[300px] object-cover transition duration-500 group-hover:scale-105 sm:h-72"
   />
 
   <div className="relative  bg-white p-6 w-[360px] ">
+    <h3 className="mt-1.5 text-lg font-medium text-gray-900">{product.title} </h3>
     <p className="text-gray-700">
-     {product.price}$
-      <span className="text-gray-400 line-through"> <br />{Math.floor(product.price*3)} $</span>
+    $ {product.price}
+      <span className="text-gray-400 line-through"> <br />${Math.floor(product.price*3)}  </span>
     </p>
+<p className=" sm:block sm:text-xs text-[18px] ">
+         Rating:
+          <a href="#" className="font-medium underline hover:text-gray-700"> {product.rating} ⭐️ </a>
+          <a href="#" className='font-medium hover:text-gray-700'>({Math.floor(Math.random()*200)} comments) </a>
+        </p>
+          
 
-    <h3 className="mt-1.5 text-lg font-medium text-gray-900">{product.name} </h3>
 
-    <p className="mt-1.5 line-clamp-3 text-gray-700">
+    <p className="mt-1.5 text-gray-700 line-clamp-1">
       {product.description}
     </p>
 
     <form className="mt-4 flex gap-4">
       <button
         className="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+        onClick={()=>{
+          handleInfo(product.id)
+        }}
       >
         Add to Cart
       </button>

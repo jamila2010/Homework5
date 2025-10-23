@@ -22,19 +22,27 @@ function Navbar() {
         <nav aria-label="Global">
           <ul className="flex items-center gap-6 text-sm">
             <li>
-              <NavLink className=" text-gray-500 transition hover:text-gray-500/75 focus:underline focus:text-[black] focus:font-medium " to="/"> Home </NavLink>
+              <NavLink className={({isActive})=>{
+                return isActive?" transition hover:text-gray-500/75 underline text-[black] font-medium " : " text-gray-500 transition hover:text-gray-500/75   "
+              }} to="/"> Home </NavLink>
             </li>
 
             <li>
-              < NavLink className="text-gray-500 transition hover:text-gray-500/75  focus:underline focus:text-[black]  focus:font-medium" to="/about"> About </NavLink>
+              < NavLink className={({isActive})=>{
+                return isActive?" transition hover:text-gray-500/75 underline text-[black] font-medium":"text-gray-500 transition hover:text-gray-500/75   "
+              }} to="/about"> About </NavLink>
             </li>
 
             <li>
-              <NavLink className="text-gray-500 transition hover:text-gray-500/75  focus:underline focus:text-[black]  focus:font-medium" to ="/product"> Product </NavLink>
+              <NavLink className={({isActive})=>{
+                return isActive?" transition hover:text-gray-500/75 underline text-[black] font-medium":"text-gray-500 transition hover:text-gray-500/75   "
+              }} to ="/product"> Product </NavLink>
             </li>
 
             <li>
-              <NavLink className="text-gray-500 transition hover:text-gray-500/75  focus:underline focus:text-[black]  focus:font-medium" to="/contact"> Contact </NavLink>
+              <NavLink className={({isActive})=>{
+                return isActive?" transition hover:text-gray-500/75 underline text-[black] font-medium":"text-gray-500 transition hover:text-gray-500/75   "
+              }} to="/contact"> Contact </NavLink>
             </li>
           </ul>
         </nav>

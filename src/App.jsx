@@ -5,6 +5,7 @@ import MainLayout from './layout/MainLayout'
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
+import ProductPage from './components/ProductPage'
 
 export default function App() {
  const routs=createBrowserRouter([{
@@ -21,8 +22,13 @@ export default function App() {
     },
     {
       path:"product",
-      element: <Product />
-    },{
+      element: <Product/>
+    },
+      {
+      path:"product/:id",
+      element: <ProductPage  />
+    },
+    {
       path:"contact",
       element: <Contact />
     }
