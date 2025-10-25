@@ -29,7 +29,15 @@ function UseHook(api) {
         }
         fetchData()
     }, [api])
-  return {data, error, pending}
+
+    const formData=(form)=>{
+        const newData= new FormData(form)
+        const newUser={}
+        for(let [key, value] of newData.entries()) newUser[key]=value
+        setData((prev)=> prev? [...prev, newUser]: [newUser])
+    }
+
+  return {data, error, pending, formData}
 }
 
 export {UseHook}
