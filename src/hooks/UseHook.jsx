@@ -6,27 +6,42 @@ function UseHook(api) {
     const [pending, setPending]= useState(false)
     const [error, setError]=useState(null)
 
-    useEffect(()=>{
-        const fetchData=async ()=>{
-            setPending(true)
-
-            try{
-                const res= await fetch(api)
-
-                if(!res.ok){
-                    throw new Error(res.statusText + " " +res.status)
-                }
-
-                const data = await res.json()
-                setData(data)
-                
-                setPending(false)
-                console.log("Fetched data:", data);
-            }catch({message}){
-                setError(message)
-                setPending(false)
+    const fetchData=async ()=>{
+        setPending(true)
+        
+        try{
+            const res= await fetch(api)
+            
+            if(!res.ok){
+                throw new Error(res.statusText + " " +res.status)
             }
+            const data = await res.json()
+            setData(data)
+           console.log("Fetched data:", data);
+        }catch({message}){
+            setError(message)
+            
+        }finally{
+            setPending(false)
         }
+    }
+    const createUser=async(newUser)=>{
+    try{
+        const res= await fetch(api,{
+            method:"POST",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify(newUser),
+        })
+        if(!res.ok){
+            throw new Error (`${res.statusText} ${res.status}`)
+        }
+        const data= await res.json()
+        setUsers((prev)=>prev? [...prev, data]:[data])
+    }catch(err){}
+    }
+    useEffect(()=>{
         fetchData()
     }, [api])
 
@@ -37,7 +52,7 @@ function UseHook(api) {
         setData((prev)=> prev? [...prev, newUser]: [newUser])
     }
 
-  return {data, error, pending, formData}
+  return {data, error, pending, formData, createUser}
 }
 
 export {UseHook}

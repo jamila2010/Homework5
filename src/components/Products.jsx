@@ -4,7 +4,7 @@ import{ useNavigate} from 'react-router-dom'
 
 function Products() {
   const [api, setApi] =useState('https://dummyjson.com/products')  
-  const {data, error, pending}=UseHook(api)
+  const {data, error, pending, createUser , formData}=UseHook(api)
   const navigate =useNavigate()
  const handleInfo=(id)=>{
 navigate(`/product/${id}`)

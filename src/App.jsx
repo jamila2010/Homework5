@@ -6,6 +6,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
 import ProductPage from './components/ProductPage'
+import ErrorPage from './components/ErrorPage'
 
 export default function App() {
  const routs=createBrowserRouter([{
@@ -33,7 +34,13 @@ export default function App() {
       element: <Contact />
     }
   ]
- }])
+ }
+,
+{
+path:"*",
+element: <ErrorPage />
+}
+])
   return (
    <RouterProvider router={routs} />
   )

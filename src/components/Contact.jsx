@@ -5,7 +5,7 @@ import { useState } from 'react'
 function Contact () {
     const [product, setProduct] = useState(null)
     const [api, setApi] =useState('https://jsonplaceholder.typicode.com/users')  
-    const {data, error, pending, formData}=UseHook(api)
+    const {data, error, pending, formData, createUser}=UseHook(api)
     const {id}=useParams()
     const [showModal, setModal]=useState(false)
 
@@ -56,21 +56,22 @@ function Contact () {
        <form onSubmit={(e)=>{
         e.preventDefault()
         setModal(false)
-        formData(e.target)
+       const newUser= formData(e.target)
+       createUser(newUser)
        }} className='border bg-white rounded-[10px] flex flex-col gap-[15px] w-96 mx-auto p-[20px] '>
         <label>Name
-            <input type="text" placeholder='Enter your name' autoComplete='off' className='border px-[10px] py-[5px] rounded-[8px]  w-full' name='name' id='name' />
+            <input type="text" placeholder='Enter your name' autoComplete='off' className='border px-[10px] py-[5px] rounded-lg  w-full' name='name' id='name' />
         </label>
         <label>Number
-            <input type="number" placeholder='Enter your phone number' autoComplete='off' className='border px-[10px] py-[5px] rounded-[8px]  w-full' name='number' id='number' />
+            <input type="number" placeholder='Enter your phone number' autoComplete='off' className='border px-2.5 py-[5px] rounded-lg  w-full' name='number' id='number' />
         </label>
 
       <label > Email
-        <input name="email" id="email" placeholder='Enter your email' autoComplete='off' className='border px-[10px] py-[5px] rounded-[8px] w-full'></ input>
+        <input name="email" id="email" placeholder='Enter your email' autoComplete='off' className='border px-2.5 py-[5px] rounded-lg w-full'></ input>
       </label>
        <div className='flex gap-[20px] '>
-          <button className=' px-[15px] py-[5px] rounded-[8px] border font-medium w-full hover:bg-teal-600 hover:text-white'  >Create</button>
-         <button className=' px-[15px] py-[5px] rounded-[8px] border hover:bg-amber-100 font-medium w-full ' onClick={()=>{
+          <button className=' px-[15px] py-[5px] rounded-lg  border font-medium w-full hover:bg-teal-600 hover:text-white'  >Create</button>
+         <button className=' px-[15px] py-[5px]  rounded-lg  border hover:bg-amber-100 font-medium w-full ' onClick={()=>{
        handleClose()
        }}>Close</button>
        </div>
