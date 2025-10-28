@@ -63,7 +63,7 @@ function Contact () {
             <input type="text" placeholder='Enter your name' autoComplete='off' className='border px-[10px] py-[5px] rounded-lg  w-full' name='name' id='name' />
         </label>
         <label>Number
-            <input type="number" placeholder='Enter your phone number' autoComplete='off' className='border px-2.5 py-[5px] rounded-lg  w-full' name='number' id='number' />
+            <input type="number" placeholder='Enter your phone number' autoComplete='off' className='border px-2.5 py-[5px] rounded-lg  w-full' name='phone' id='phone' />
         </label>
 
       <label > Email
