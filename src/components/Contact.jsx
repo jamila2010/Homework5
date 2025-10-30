@@ -27,10 +27,10 @@ function Contact () {
     <button className='ml-auto mr-[20px] px-[15px] py-[5px] rounded-[8px] border hover:bg-amber-100 font-medium' onClick={(e)=>{handleModal()}}>
       Create +
     </button>
-      <div className='flex flex-wrap gap-[50px] justify-center items-center mt-[50px]  '>
+      <div className='flex flex-wrap gap-[50px] justify-center items-center mt-[50px] text-black  '>
       {error && <h2>Not Found</h2> }
       {/* {pending &&<h2>Loading...</h2> } */}
-      { !pending&& !error && data&& data.length===0 &&<div> <h1 className='font-bold text-[70px] mx-auto w-[500px] '>No users left</h1> </div> }
+      { !pending&& !error && data&& data.length===0 &&<div> <h1 className=' font-bold text-[70px] mx-auto w-[500px] '>No users left</h1> </div> }
       {data&& data.map(({name, email, phone,id })=>{
         return (
       <div className='flex flex-wrap' key={id}>
@@ -38,7 +38,7 @@ function Contact () {
             <button className='ml-[350px] mr-5 mt-[10px] transition-transform duration-300 hover:rotate-12  hover:scale-105 cursor-pointer hover:text-[red] ' onClick={()=>{
               deleteUser(id)
             }} ><i className="fa-solid fa-trash"></i></button>
-            <div className="relative  bg-white px-6 pb-6 w-[360px]  ">
+            <div className="relative text-black  bg-white px-6 pb-6 w-[360px]  ">
     <h3 className="mt-1.5 text-lg "> Name: <span className='font-medium'> {name}</span> </h3>
     <p className="text-lg ">
    Email:
@@ -58,13 +58,13 @@ function Contact () {
     </div>
   
      {showModal && 
-       <div className=' fixed inset-0 bg-black/60 z-50 flex justify-center items-center '>
+       <div className=' fixed inset-0 bg-black/60 z-50 text-black  flex justify-center items-center '>
        <form onSubmit={(e)=>{
         e.preventDefault()
         setModal(false)
        const newUser= formData(e.target)
        createUser(newUser)
-       }} className='border bg-white rounded-[10px] flex flex-col gap-[15px] w-96 mx-auto p-[20px] '>
+       }} className='border bg-white rounded-[10px] text-black  flex flex-col gap-[15px] w-96 mx-auto p-[20px] '>
         <label>Name
             <input type="text" placeholder='Enter your name' autoComplete='off' className='border px-[10px] py-[5px] rounded-lg  w-full' name='name' id='name' />
         </label>
@@ -76,8 +76,8 @@ function Contact () {
         <input name="email" id="email" placeholder='Enter your email' autoComplete='off' className='border px-2.5 py-[5px] rounded-lg w-full'></ input>
       </label>
        <div className='flex gap-[20px] '>
-          <button className=' px-[15px] py-[5px] rounded-lg  border font-medium w-full hover:bg-teal-600 hover:text-white'  >Create</button>
-         <button className=' px-[15px] py-[5px]  rounded-lg  border hover:bg-amber-100 font-medium w-full ' onClick={()=>{
+          <button className=' px-[15px] py-[5px] rounded-lg text-black   border font-medium w-full hover:bg-teal-600 hover:text-white'  >Create</button>
+         <button className=' px-[15px] py-[5px]  rounded-lg text-black   border hover:bg-amber-100 font-medium w-full ' onClick={()=>{
        handleClose()
        }}>Close</button>
        </div>
