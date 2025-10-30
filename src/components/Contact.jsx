@@ -38,7 +38,7 @@ function Contact () {
             <button className='ml-[350px] mr-5 mt-[10px] transition-transform duration-300 hover:rotate-12  hover:scale-105 cursor-pointer hover:text-[red] ' onClick={()=>{
               deleteUser(id)
             }} ><i className="fa-solid fa-trash"></i></button>
-            <div className="relative  bg-white px-6 pb-6 w-[360px] ">
+            <div className="relative  bg-white px-6 pb-6 w-[360px]  ">
     <h3 className="mt-1.5 text-lg "> Name: <span className='font-medium'> {name}</span> </h3>
     <p className="text-lg ">
    Email:
@@ -58,7 +58,7 @@ function Contact () {
     </div>
   
      {showModal && 
-       <div className='c '>
+       <div className=' fixed inset-0 bg-black/60 z-50 flex justify-center items-center '>
        <form onSubmit={(e)=>{
         e.preventDefault()
         setModal(false)
