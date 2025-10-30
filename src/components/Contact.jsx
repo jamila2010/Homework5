@@ -5,7 +5,7 @@ import { useState } from 'react'
 function Contact () {
     const [product, setProduct] = useState(null)
     const [api, setApi] =useState('https://jsonplaceholder.typicode.com/users')  
-    const {data, error, pending, formData, createUser}=UseHook(api)
+    const {data, error, pending, formData, createUser, deleteUser}=UseHook(api)
     const {id}=useParams()
     const [showModal, setModal]=useState(false)
 
@@ -22,18 +22,23 @@ function Contact () {
   return (
    <div>
     
-      {pending &&<h2 className='mx-auto w-[100px] '>Loading...</h2> }
+      {pending && <div className=' fixed inset-0 bg-black/60 z-50 flex justify-center items-center'> <h2 className='mx-auto w-[100px] text-white text-[70px] '><span className="loading loading-spinner loading-xl"></span>
+</h2> </div>}
     <button className='ml-auto mr-[20px] px-[15px] py-[5px] rounded-[8px] border hover:bg-amber-100 font-medium' onClick={(e)=>{handleModal()}}>
       Create +
     </button>
       <div className='flex flex-wrap gap-[50px] justify-center items-center mt-[50px]  '>
       {error && <h2>Not Found</h2> }
-      {pending &&<h2>Loading...</h2> }
+      {/* {pending &&<h2>Loading...</h2> } */}
+      { !pending&& !error && data&& data.length===0 &&<div> <h1 className='font-bold text-[70px] mx-auto w-[500px] '>No users left</h1> </div> }
       {data&& data.map(({name, email, phone,id })=>{
         return (
       <div className='flex flex-wrap' key={id}>
-          <a href="#" className="group relative overflow-hidden shadow-2xs rounded-[8px] border border-gray-100 ">
-            <div className="relative  bg-white p-6 w-[360px] ">
+          <a href="#" className="group relative overflow-hidden shadow-2xs rounded-lg border border-gray-100 ">
+            <button className='ml-[350px] mr-5 mt-[10px] transition-transform duration-300 hover:rotate-12  hover:scale-105 cursor-pointer hover:text-[red] ' onClick={()=>{
+              deleteUser(id)
+            }} ><i className="fa-solid fa-trash"></i></button>
+            <div className="relative  bg-white px-6 pb-6 w-[360px] ">
     <h3 className="mt-1.5 text-lg "> Name: <span className='font-medium'> {name}</span> </h3>
     <p className="text-lg ">
    Email:
@@ -43,6 +48,7 @@ function Contact () {
 <p className=" sm:block sm:text-xs text-[18px] ">
       {phone}
         </p>
+       
   </div>
 </a>
       </div>
@@ -52,7 +58,7 @@ function Contact () {
     </div>
   
      {showModal && 
-       <div className=' fixed inset-0 bg-black/60 z-50 flex justify-center items-center '>
+       <div className='c '>
        <form onSubmit={(e)=>{
         e.preventDefault()
         setModal(false)

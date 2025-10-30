@@ -41,6 +41,22 @@ function UseHook(api) {
         setUsers((prev)=>prev? [...prev, data]:[data])
     }catch(err){}
     }
+    const deleteUser=async (id)=>{
+        setPending(true)
+        try{
+        const res=await fetch(`${api}/${id}`,{
+            method:"DELETE",
+        } )
+            if(!res.ok){
+                throw new Error("Something went wrong")
+            }
+            setData((prev)=> prev.filter((user)=> user.id!==id))
+        }catch(err){
+
+        }finally{
+        setPending(false)
+        }
+    }
     useEffect(()=>{
         fetchData()
     }, [api])
@@ -52,7 +68,7 @@ function UseHook(api) {
         setData((prev)=> prev? [...prev, newUser]: [newUser])
     }
 
-  return {data, error, pending, formData, createUser}
+  return {data, error, pending, formData, createUser, deleteUser}
 }
 
 export {UseHook}

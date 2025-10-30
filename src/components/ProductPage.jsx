@@ -12,6 +12,8 @@ function ProductPage() {
     // setProduct(filteredData)
   return (
   <div>
+     {pending && <div className=' fixed inset-0 bg-black/60 z-50 flex justify-center items-center'> <h2 className='mx-auto w-[100px] text-white text-[20px] '><span className="loading loading-spinner loading-xl"></span>
+</h2> </div>}
     {filteredData && filteredData.map(({id, thumbnail, title, price, rating, availabilityStatus, weight, description , brand, reviews , stock, returnPolicy , discountPercentage})=>{
       return (
          <article key={id} className="rounded-xl border-2 border-gray-100 bg-white max-w-[800px] mx-auto mt-10">

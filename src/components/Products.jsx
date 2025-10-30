@@ -13,7 +13,8 @@ navigate(`/product/${id}`)
   return (
     <div className='flex flex-wrap gap-[50px] justify-center items-center mt-[50px]  '>
       {error && <h2>Not Found</h2> }
-      {pending &&<h2>Loading...</h2> }
+      {pending && <div className=' fixed inset-0 bg-black/60 z-50 flex justify-center items-center'> <h2 className='mx-auto w-[100px] text-white text-[20px] '><span className="loading loading-spinner loading-xl"></span>
+</h2> </div>}
       {data&& data.products.map((product)=>{
         return (
       <div className='flex flex-wrap'>
